@@ -9,9 +9,9 @@ import java.util.concurrent.TimeUnit;
 
 public class BenchmarkConfig {
 
-    public static Options createBenchmarkOptions() {
+    public static Options createBenchmarkOptions(String benchmarkClassName) {
         return new OptionsBuilder()
-            .include(MethodAccessBenchmark.class.getSimpleName())
+            .include(benchmarkClassName)
             .shouldFailOnError(true)
             .shouldDoGC(true)
             .mode(Mode.AverageTime)
