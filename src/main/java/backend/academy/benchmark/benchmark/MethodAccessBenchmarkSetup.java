@@ -20,8 +20,7 @@ public class MethodAccessBenchmarkSetup {
     }
 
     public MethodHandle setupMethodHandle(Object student)
-        throws NoSuchMethodException, IllegalAccessException
-    {
+        throws NoSuchMethodException, IllegalAccessException {
         MethodHandles.Lookup lookup = MethodHandles.lookup();
         MethodType methodType = MethodType.methodType(String.class);
 

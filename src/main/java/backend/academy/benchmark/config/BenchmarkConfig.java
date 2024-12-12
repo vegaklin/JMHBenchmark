@@ -1,12 +1,13 @@
 package backend.academy.benchmark.config;
 
-import backend.academy.benchmark.benchmark.MethodAccessBenchmark;
+import java.util.concurrent.TimeUnit;
+import lombok.experimental.UtilityClass;
 import org.openjdk.jmh.annotations.Mode;
 import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
 import org.openjdk.jmh.runner.options.TimeValue;
-import java.util.concurrent.TimeUnit;
 
+@UtilityClass
 public class BenchmarkConfig {
 
     public static Options createBenchmarkOptions(String benchmarkClassName) {

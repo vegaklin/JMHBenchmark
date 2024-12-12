@@ -2,21 +2,24 @@ package backend.academy.benchmark.benchmark;
 
 import backend.academy.benchmark.benchmark.lambda.LambdaMetafactoryInvoker;
 import backend.academy.benchmark.model.Student;
+import java.lang.invoke.MethodHandle;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.Setup;
 import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.infra.Blackhole;
-import java.lang.invoke.MethodHandle;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 
 @State(Scope.Thread)
 public class MethodAccessBenchmark {
 
     private Object student;
+
     private Method method;
+
     private MethodHandle methodHandle;
+
     private LambdaMetafactoryInvoker lambdaMetafactory;
 
     @Setup
