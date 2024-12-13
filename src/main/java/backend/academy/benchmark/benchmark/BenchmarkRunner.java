@@ -7,6 +7,7 @@ import org.openjdk.jmh.runner.options.Options;
 
 @Log4j2
 public class BenchmarkRunner {
+
     private final Options options;
 
     public BenchmarkRunner(Options options) {

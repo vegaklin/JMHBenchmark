@@ -8,6 +8,7 @@ import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodHandles;
 import java.lang.invoke.MethodType;
 import java.lang.reflect.Method;
+import static backend.academy.benchmark.constant.BenchmarkConstants.METHOD_NAME;
 
 public class MethodAccessBenchmarkSetup {
 
@@ -16,7 +17,7 @@ public class MethodAccessBenchmarkSetup {
     }
 
     public Method setupReflection(Object student) throws NoSuchMethodException {
-        return student.getClass().getMethod("name");
+        return student.getClass().getMethod(METHOD_NAME);
     }
 
     public MethodHandle setupMethodHandle(Object student)
@@ -24,7 +25,7 @@ public class MethodAccessBenchmarkSetup {
         MethodHandles.Lookup lookup = MethodHandles.lookup();
         MethodType methodType = MethodType.methodType(String.class);
 
-        return lookup.findVirtual(student.getClass(), "name", methodType);
+        return lookup.findVirtual(student.getClass(), METHOD_NAME, methodType);
     }
 
     public LambdaMetafactoryInvoker setupLambdaMetafactory(
