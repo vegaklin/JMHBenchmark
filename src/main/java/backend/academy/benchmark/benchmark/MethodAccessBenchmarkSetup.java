@@ -8,12 +8,15 @@ import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodHandles;
 import java.lang.invoke.MethodType;
 import java.lang.reflect.Method;
+import static backend.academy.benchmark.constant.BenchmarkConstants.INTERFACE_METHOD_NAME;
 import static backend.academy.benchmark.constant.BenchmarkConstants.METHOD_NAME;
+import static backend.academy.benchmark.constant.BenchmarkConstants.NAME;
+import static backend.academy.benchmark.constant.BenchmarkConstants.SURNAME;
 
 public class MethodAccessBenchmarkSetup {
 
     public Object createStudent() {
-        return new Student("Ruslan", "Gimaev");
+        return new Student(NAME, SURNAME);
     }
 
     public Method setupReflection(Object student) throws NoSuchMethodException {
@@ -36,7 +39,7 @@ public class MethodAccessBenchmarkSetup {
 
         CallSite callSite = LambdaMetafactory.metafactory(
             lookup,
-            "invoke",
+            INTERFACE_METHOD_NAME,
             methodType,
             LambdaMetafactoryInvoker.SIGNATURE,
             methodHandle,

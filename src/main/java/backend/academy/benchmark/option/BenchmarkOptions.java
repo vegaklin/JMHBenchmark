@@ -10,6 +10,8 @@ import static backend.academy.benchmark.constant.BenchmarkConstants.BENCHMARK_CL
 import static backend.academy.benchmark.constant.BenchmarkConstants.FORKS_COUNT;
 import static backend.academy.benchmark.constant.BenchmarkConstants.MEASUREMENT_ITERATIONS;
 import static backend.academy.benchmark.constant.BenchmarkConstants.MEASUREMENT_TIME;
+import static backend.academy.benchmark.constant.BenchmarkConstants.SHOULD_DO_GC;
+import static backend.academy.benchmark.constant.BenchmarkConstants.SHOULD_FAIL_ON_ERROR;
 import static backend.academy.benchmark.constant.BenchmarkConstants.THREADS_COUNT;
 import static backend.academy.benchmark.constant.BenchmarkConstants.WARMUP_FORKS_COUNT;
 import static backend.academy.benchmark.constant.BenchmarkConstants.WARMUP_ITERATIONS;
@@ -21,8 +23,8 @@ public class BenchmarkOptions {
     public static Options createBenchmarkOptions() {
         return new OptionsBuilder()
             .include(BENCHMARK_CLASS_NAME)
-            .shouldFailOnError(true)
-            .shouldDoGC(true)
+            .shouldFailOnError(SHOULD_FAIL_ON_ERROR)
+            .shouldDoGC(SHOULD_DO_GC)
             .mode(Mode.AverageTime)
             .timeUnit(TimeUnit.NANOSECONDS)
             .threads(THREADS_COUNT)
