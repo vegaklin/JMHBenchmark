@@ -46,13 +46,13 @@ public class MethodAccessBenchmark {
     }
 
     @Benchmark
-    public void methodHandle(Blackhole bh) throws Throwable {
+    public void invokeMethodHandle(Blackhole bh) throws Throwable {
         String name = (String) methodHandle.invoke(student);
         bh.consume(name);
     }
 
     @Benchmark
-    public void lambdaMetafactory(Blackhole bh) {
+    public void invokeLambdaMetafactory(Blackhole bh) {
         String name = lambdaMetafactory.invoke(student);
         bh.consume(name);
     }
